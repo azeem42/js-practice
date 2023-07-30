@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<input type="number" id="value1" placeholder="Enter 1st Number">
+<input type="number" id="value2" placeholder="Enter 2nd Number"><br><br>
+<button onclick="Add()">Add</button>
+<button onclick="Subtract()">Subtract</button>
+<button onclick="myFunction()">Multiply</button>
+<button onclick="myFunction()">Divide</button>
+<p id="demo"></p>
+<script>
+        function myFunction(){
+                let res1 = Number(document.getElementById("value1").value);
+                let res2 = Number(document.getElementById("value2").value);
+                let result;
+                // document.getElementById("demo").innerHTML = result;
+                function Add(){
+                // let res1 = Number(document.getElementById("value1").value);
+                // let res2 = Number(document.getElementById("value2").value);
+                let result = res1 + res2;
+                // document.getElementById("demo").innerHTML = result; 
+        }
+                function Subtract(){
+                        let result = res1 - res2;
+                }
+                function Multiply(){
+                
+                let result = res1 * res2;
+                // document.getElementById("demo").innerHTML = result;
+        }
+                document.getElementById("demo").innerHTML = result;
+                }
+</script>
+</body>
+</html>
