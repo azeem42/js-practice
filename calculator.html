@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <input type="number" id="value1" placeholder="Enter 1st Number">
+    <input type="number" id="value2" placeholder="Enter 2nd Number">
+    <br>
+    <br>
+    <button onclick="myFunction('add')">Add</button>
+    <button onclick="myFunction('subtract')">Subtract</button>
+    <button onclick="myFunction('multiply')">Multiply</button>
+    <button onclick="myFunction('divide')">Divide</button>
+    <p id="demo"></p>
+    <script>
+        function myFunction(action) {
+            let res1 = Number(document.getElementById("value1").value);
+            let res2 = Number(document.getElementById("value2").value);
+            let result;
+            if (action == 'add') {
+                result = res1 + res2;
+            } else if (action == 'subtract') {
+                result = res1 - res2;
+            } else if (action == 'multiply') {
+                result = res1 * res2;
+            } else {
+                if (res2 <= 0) {
+                    result = "Please Enter a valid Number";
+                } else {
+                    result = res1 / res2;
+                }
+            }
+            document.getElementById("demo").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>
