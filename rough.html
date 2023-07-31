@@ -2,32 +2,32 @@
 <html>
 
 <body>
-    <input type="number" id="num" placeholder="Enter a number for table" required>
-    <input type="number" id="start" placeholder="Enter the starting number" required>
-    <input type="number" id="limit" placeholder="Enter a range" required><br><br>
+    <input type="number" id="num" placeholder="Enter a number for table">
+    <input type="number" id="start" placeholder="Enter the starting number">
+    <input type="number" id="limit" placeholder="Enter a range"><br><br>
     <button onclick="myFunction()">Click Here</button>
     <p id="demo"></p>
     <script>
-        function myFunction(){
+        function myFunction() {
             let num = Number(document.getElementById("num").value);
             let start = Number(document.getElementById("start").value);
             let limit = Number(document.getElementById("limit").value);
             let result = "";
 
-           if(num <= 0){
-                // result = "Please enter a valid number.";
+            if (num <= 0) {
                 alert("Please enter a valid number for table.");
-            }else if(start <= 0){
+            } else if (start <= 0) {
                 alert("Please enter a valid number to start.");
-            }else if(limit <=0 ){
+            } else if (limit <= 0) {
                 alert("Please enter a valid number for limit.");
-            }else{
+            } else {
                 for (let i = start; i <= limit; i++) {
-            result += num + " * " + i + " = " + i * num + "<br>";      
-            document.getElementById("demo").innerHTML = result;
+                    result += num + " * " + i + " = " + i * num + "<br>";
+                    document.getElementById("demo").innerHTML = result;
+                }
             }
-            }     
-            }      
+            } 
+
     </script>
 </body>
 
