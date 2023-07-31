@@ -13,12 +13,21 @@
             let start = Number(document.getElementById("start").value);
             let limit = Number(document.getElementById("limit").value);
             let result = "";
-            for (let i = start; i <= limit; i++) {
+
+           if(num <= 0){
+                // result = "Please enter a valid number.";
+                alert("Please enter a valid number for table.");
+            }else if(start <= 0){
+                alert("Please enter a valid number to start.");
+            }else if(limit <=0 ){
+                alert("Please enter a valid number for limit.");
+            }else{
+                for (let i = start; i <= limit; i++) {
             result += num + " * " + i + " = " + i * num + "<br>";      
             document.getElementById("demo").innerHTML = result;
             }
-            
-        }
+            }     
+            }      
     </script>
 </body>
 
