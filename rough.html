@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <body>
     Enter a number for table<input type="number" id="num" placeholder="Enter a number for table"><br><br>
     Enter the starting number<input type="number" id="start" placeholder="Enter the starting number"><br><br>
@@ -18,19 +19,15 @@
                 alert("Please enter a valid number to start.");
             } else if (limit <= 0) {
                 alert("Please enter a valid number for limit.");
-            } else{
-
-
-                for (let j = num; j>=1; j--) {
-                for (let i = start; i <= limit; i++) { 
-                                                        
-                    result += j + " * " + i + " = " + i * j + "<br>"; 
-                    document.getElementById("demo").innerHTML = result;   
+            } else {
+                for (let j = 1; j <= num; j++) {
+                    for (let i = start; i <= limit; i++) {
+                        result += j + " * " + i + " = " + i * j + "<br>";
+                        document.getElementById("demo").innerHTML = result;
+                    }
+                }
             }
-            }
-            }         
-            } 
-
+        }
 
     </script>
 </body>
