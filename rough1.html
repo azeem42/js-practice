@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <button onclick="myFunction()">Click Here</button>
+    <p id="demo"></p>
+    <div id="myDiv">
+        <h1>I am a div</h1>
+    <script>
+           function myFunction(){
+                //Creation of paragraph element
+                const para = document.createElement("p");
+
+                //create text
+                const node = document.createTextNode("I am text of paragraph.")
+
+                para.appendChild(node);
+
+                document.getElementById("myDiv").appendChild(para);
+           }
+    </script>
+</body>
+
+</html>

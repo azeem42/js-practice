@@ -7,7 +7,6 @@
     Enter a range<input type="number" id="limit" placeholder="Enter a range"><br><br>
     <button onclick="myFunction()">Click Here</button>
     <p id="demo"></p>
-        
     <script>
         function myFunction() {
             let num = Number(document.getElementById("num").value);
@@ -24,11 +23,12 @@
             } else {
                 for (let j = 1; j <= num; j++) {
                     for (let i = start; i <= limit; i++) {
-                        result += j + " * " + i +  " = " + i * j + '<br>';
+                        result += j + " * " + i + " = " + i * j + "<br>";
                         document.getElementById("demo").innerHTML = result;
                     }
                 }
-            }           
+            }
+            
         }
 
     </script>
