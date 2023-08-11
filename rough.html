@@ -7,9 +7,18 @@
     Enter a range<input type="number" id="limit" placeholder="Enter a range"><br><br>
     <button onclick="myFunction()">Click Here</button>
     <p id="demo"></p>
+    <div id="div_id">
         
     <script>
+       
         function myFunction() {
+
+            // var x = document.createElement("DIV"); //div created
+            // var t = document.createTextNode("This is a div element."); //node created
+            // x.setAttribute("style", "background-color: pink;"); //Attributes defined
+            // x.appendChild(t);
+            // document.body.appendChild(x);
+
             let num = Number(document.getElementById("num").value);
             let start = Number(document.getElementById("start").value);
             let limit = Number(document.getElementById("limit").value);
