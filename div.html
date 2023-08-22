@@ -1,41 +1,26 @@
 <!DOCTYPE html>
 <html>
-
 <body>
 
-<div style="border: 1px solid black; text-align: center;">
-    <div style="height: 100px; width:200px; background-color: green; display: inline-block;">
-        <p>I am 1st div.</p>
-    </div>
-    <div style="height: 100px; width:200px; background-color: red; display: inline-block;">
-        <p>I am 2nd div.</p>
-    </div>
-    <div style="height: 100px; width:200px; background-color: orange; display: inline-block;">
-        <p>I am 3rd div.</p>
-    </div>
-    <div style="height: 100px; width:200px; background-color: orange; display: inline-block;">
-        <p>I am 3rd div.</p>
-    </div>
-    <div style="height: 100px; width:200px; background-color: orange; display: inline-block; margin-top: 5px;">
-        <p>I am 3rd div.</p>
-    </div>
-    <div style="height: 100px; width:200px; background-color: orange; display: inline-block;">
-        <p>I am 3rd div.</p>
-    </div>
-    <div style="height: 100px; width:200px; background-color: orange; display: inline-block;">
-        <p>I am 3rd div.</p>
-    </div>
-    <div style="height: 100px; width:200px; background-color: orange; display: inline-block; margin-top: 5px;">
-        <p>I am 3rd div.</p>
-    </div>
-    <div style="height: 100px; width:200px; background-color: orange; display: inline-block;">
-        <p>I am 3rd div.</p>
-    </div>
-    <div style="height: 100px; width:200px; background-color: darkgray; display: inline-block;">
-        <p>I am 3rd div.</p>
-    </div>
-</div>        
-    
+            <button onclick="myFunction()">Click Here</button>      
+            <p id="demo"></p>
 </body>
+<script>
+                function myFunction(){
+                    var div = document.createElement("div");
+                    div.style.width = "100px";
+                    div.style.height = "100px";
+                    div.style.marginBottom = "5px";
+                    div.style.marginLeft = "5px";
+                    div.style.display = "inline-block";
+                    div.style.background = "green";
+                    div.style.color = "white";
+                    div.innerHTML = "Hello";
+                    document.getElementById("demo").appendChild(div);
+                }
 
+                for(let i = 0; i<10; i++){
+                    myFunction();
+                }
+</script>
 </html>
