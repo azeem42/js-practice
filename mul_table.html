@@ -10,12 +10,10 @@
     <script>
         function myFunction() {
            
-
             let num = Number(document.getElementById("num").value);
             let start = Number(document.getElementById("start").value);
             let limit = Number(document.getElementById("limit").value);
-            let result = "";
-            
+                       
             if (num <= 0) {
                 alert("Please enter a valid number for table.");
             } else if (start <= 0) {
@@ -24,10 +22,20 @@
                 alert("Please enter a valid number for limit.");
             } else {
                 for (let j = 1; j <= num; j++) {
+                    let result = "";
                     for (let i = start; i <= limit; i++) {
-                        result += j + " * " + i + " = " + i * j + '<br>';
-                        document.getElementById("demo").innerHTML = result;                       
+                        result += j + " * " + i + " = " + i * j + '<br>';                      
                     }
+                    var div = document.createElement("div");
+                    div.style.width = "100px";
+                    div.style.height = "120px";
+                    div.style.marginBottom = "5px";
+                    div.style.marginLeft = "5px";
+                    div.style.display = "inline-block";
+                    div.style.background = "green";
+                    div.style.color = "white";
+                    div.innerHTML = result;
+                    document.getElementById("demo").appendChild(div);
                 }
             }
         }
