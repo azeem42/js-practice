@@ -6,15 +6,24 @@
             <p id="demo"></p>
 </body>
 <script>  
-                const cars = ["Honda", "Toyota", "Corolla", "Suzuki", 1, 2, 3, 4];      
+                const cars = ["Honda",2,"Corolla",4,1,"Toyota",3,"Suzuki"]; 
+                const str = [];
+                const num = [];     
                 function myFunction(){
                   
                   for(let i = 0; i <= cars.length; i++){
                     if(typeof cars[i] === 'string'){
-                      return cars[i];
+                      str[i] = cars[i];
+                      console.log(str[i]);
+                    }
+                  }
+                  for(let j = 0; j <= cars.length; j++){
+                    if(typeof cars[j] === 'number'){
+                      num[j] = cars[j];
+                      console.log(num[j]);
                     }
                   }    
-              document.getElementById("demo").innerHTML = x;             
+                  document.getElementById("demo").innerHTML = str + "<br>" + num;             
               }
                
 </script>
