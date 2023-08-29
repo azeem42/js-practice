@@ -8,22 +8,28 @@
 <script>  
                 const cars = ["Honda",2,"Corolla",4,1,"Toyota",3,"Suzuki"]; 
                 const str = [];
-                const num = [];     
+                const num = [];  
+                let text = ""; 
+                let number = "";  
                 function myFunction(){
                   
                   for(let i = 0; i <= cars.length; i++){
                     if(typeof cars[i] === 'string'){
-                      str[i] = cars[i];
-                      console.log(str[i]);
+                      str.push(cars[i]);
                     }
                   }
                   for(let j = 0; j <= cars.length; j++){
                     if(typeof cars[j] === 'number'){
-                      num[j] = cars[j];
-                      console.log(num[j]);
+                      num.push(cars[j]); 
                     }
-                  }    
-                  document.getElementById("demo").innerHTML = str + "<br>" + num;             
+                  }
+                  for(let a = 0; a < str.length; a++){
+                        text += str[a] + "<br>" ;
+                      }
+                      for(let b = 0; b < num.length; b++){
+                        number += num[b] + "<br>" ;
+                      }    
+                  document.getElementById("demo").innerHTML = text + "<br>" + number;             
               }
                
 </script>
