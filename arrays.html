@@ -12,16 +12,16 @@
                 let number = "";  
                 function myFunction(){
                   
-                  for(let i = 0; i <= cars.length; i++){
+                  for(let i = 0; i < cars.length; i++){
                     if(typeof cars[i] === 'string'){
                       str.push(cars[i]);
+                      console.log(str);
+                    } else{
+                      num.push(cars[i]);
+                      console.log(num);
                     }
                   }
-                  for(let j = 0; j <= cars.length; j++){
-                    if(typeof cars[j] === 'number'){
-                      num.push(cars[j]); 
-                    }
-                  }
+
                   for(let a = 0; a < str.length; a++){
                         text += str[a] + "<br>" ;
                       }
