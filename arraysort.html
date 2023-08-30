@@ -9,24 +9,24 @@
                 const str = [];
                 const num = [];  
                 let text = ""; 
-                let number = "";  
+                let number = []; 
+                let even = ""; 
                 function myFunction(){
                   
                   for(let i = 0; i < cars.length; i++){
                     if(typeof cars[i] === 'string'){
                       str.push(cars[i]);
-                      console.log(str);
                     } else{
                       num.push(cars[i]);
-                      console.log(num);
                     }
                   }
-
                   for(let a = 0; a < str.length; a++){
                         text += str[a] + "<br>" ;
                       }
                       for(let b = 0; b < num.length; b++){
-                        number += num[b] + "<br>" ;
+                     if(num[b] % 2 == 0)
+                        number.push(num[b]);
+                        // number += num[b] + "<br>" ;
                       }    
                   document.getElementById("demo").innerHTML = text + "<br>" + number;             
               }              
