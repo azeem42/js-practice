@@ -5,30 +5,39 @@
             <p id="demo"></p>
 </body>
 <script>  
-                const cars = ["Honda",2,"Corolla",4,1,"Toyota",3,"Suzuki"]; 
+                const cars = ["Honda", 2 ,"Corolla", 4 , 3 ,"Toyota", 1 ,"Suzuki"]; 
                 const str = [];
                 const num = [];  
                 let text = ""; 
                 let number = []; 
-                let even = ""; 
+                let even = [];
+                let odd = [];
                 function myFunction(){
                   
                   for(let i = 0; i < cars.length; i++){
                     if(typeof cars[i] === 'string'){
-                      str.push(cars[i]);
+                      str.push(cars[i] + "<br>");
                     } else{
-                      num.push(cars[i]);
+                      num.push(cars[i] + "<br>");
+                      if(num[i] % 2 == 0){
+                      even.push(num[i]);
+                    }else{
+                      odd.push(num[i]);
                     }
+                    }
+                   
                   }
-                  for(let a = 0; a < str.length; a++){
-                        text += str[a] + "<br>" ;
-                      }
-                      for(let b = 0; b < num.length; b++){
-                     if(num[b] % 2 == 0)
-                        number.push(num[b]);
-                        // number += num[b] + "<br>" ;
-                      }    
-                  document.getElementById("demo").innerHTML = text + "<br>" + number;             
+                  // for(let a = 0; a < str.length; a++){
+                  //       text += str[a] + "<br>" ;
+                  //     }
+                  //     for(let b = 0; b < num.length; b++){
+                  //    if(num[b] % 2 == 0){
+                  //       number.push(num[b]);}
+                  //       else{
+                  //         number.push(num[b]);
+                  //       }
+                  //     }    
+                  document.getElementById("demo").innerHTML = str + "<br>" + num + "<br>" + even + "<br>" + odd;             
               }              
 </script>
 </html>
