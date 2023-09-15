@@ -14,13 +14,17 @@
     let even = [];
     let odd = [];
     function myFunction() {
-
+                
         for (let i = 0; i < cars.length; i++) {
             if (typeof cars[i] === 'string') {
-
+                str.push(cars[i]);
+                console.log(cars[i]);
+            }else{
+                num.push(cars[i]);
+                console.log(cars[i]);
             }
         }
-        document.getElementById("demo").innerHTML = str.push(cars);
+        document.getElementById("demo").innerHTML = str + "<br>" + num;
     }
 
 </script>
