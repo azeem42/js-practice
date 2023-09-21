@@ -4,27 +4,26 @@
 <body>
     <button onclick="myFunction()">Click Here</button>
     <p id="demo"></p>
+    <p id="string"></p>
+    <p id="number"></p>
+
+
 </body>
 <script>
     const cars = ["Honda", 2, "Corolla", 4, 3, "Toyota", 1, "Suzuki"];
-    const str = [];
-    const num = [];
-    let text = "";
-    let number = "";
-    let even = [];
-    let odd = [];
     function myFunction() {
-                
+
+        
         for (let i = 0; i < cars.length; i++) {
             if (typeof cars[i] === 'string') {
-                str.push(cars[i]);
-                console.log(cars[i]);
-            }else{
-                num.push(cars[i]);
-                console.log(cars[i]);
+                return cars[i];
+                let div = document.createElement("div");
+                div.innerHTML = cars;
+            } else {
+                
             }
         }
-        document.getElementById("demo").innerHTML = str + "<br>" + num;
+
     }
 
 </script>
