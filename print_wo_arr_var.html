@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html>
-
 <body>
     <button onclick="myFunction()">Click Here</button>
     <p id="demo"></p>
-    <p id="string"></p>
-    <p id="number"></p>
-
-
+    <div id="strings"></div>
+    <br>
+    <div id="numbers"></div>
+    <br>
+    <div id="even"></div>
+    <br>
+    <div id="odd"></div>
 </body>
 <script>
-    const cars = ["Honda", 2, "Corolla", 4, 3, "Toyota", 1, "Suzuki"];
+    const cars = ["Honda", 2, "Corolla", 3, 4, "Toyota", 1, "Suzuki"];
+    
     function myFunction() {
-
-        
         for (let i = 0; i < cars.length; i++) {
             if (typeof cars[i] === 'string') {
-                return cars[i];
-                let div = document.createElement("div");
-                div.innerHTML = cars;
+
+                document.getElementById("strings").innerHTML += cars[i] + "<br>";
+
             } else {
-                
+
+                document.getElementById("numbers").innerHTML += cars[i] + "<br>";
+
+                if (cars[i] % 2 == 0) {
+
+                    document.getElementById("even").innerHTML += cars[i] + "<br>";
+
+            } else {
+
+                    document.getElementById("odd").innerHTML += cars[i] + "<br>";
+
+                }
+
             }
         }
 
     }
 
 </script>
-
 </html>
