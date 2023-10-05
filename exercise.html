@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    Name: <input type="text" id="name" placeholder="Enter Your Name">
+    Marks: <input type="text" id="mark" placeholder="Enter Your Marks">
+    <br><br>
+    <button>Click Here</button>
+    <p id="f"></p>
+
+    <table id="mytable">
+    </table>
+    
+</body>
+
+<script>
+    const scores = [{ firstName: "John", marks: 59 }, { firstName: "Alex", marks: 65 },
+    { firstName: "Ayra", marks: 75 }];
+
+    // function myFunction() {
+        var name = document.getElementById('name').value;
+        var marks = document.getElementById('mark').value;
+        var scores_obj = {firstName: name, marks: marks};
+        scores.push(scores_obj);
+        let table = document.getElementById('mytable');
+        for (let score of scores) {
+            let tr = document.createElementById('tr');
+
+            let td1 = document.createElementById('td');
+            td1.textContent = score.firstName;
+            tr.appendChild(td1);
+
+            let td2 = document.createElementById('td');
+            td2.textContent = score.firstName;
+            tr.appendChild(td2);
+
+            table.appendChild(tr);
+            
+        }
+    //     document.getElementById('mytable').innerHTML = pval;
+    // }
+
+</script>
+
+</html>

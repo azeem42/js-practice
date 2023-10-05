@@ -7,26 +7,24 @@
     <br><br>
     <button onclick="myFunction()">Click Here</button>
     <p id="f"></p>
-
+ 
 </body>
+
 <script>
     const score = [{ firstName: "John", marks: 59 }, { firstName: "Alex", marks: 65 },
-                 { firstName: "Ayra", marks: 75 }];
+    { firstName: "Ayra", marks: 75 }];
 
     function myFunction() {
-
         var name = document.getElementById('name').value;
         var marks = document.getElementById('mark').value;
         var score_obj = { firstName: name, marks: marks };
         score.push(score_obj);
-        var pval = "";
+        var pval = " ";
         for (i = 0; i < score.length; i++) {
             pval = pval + score[i].firstName + ' ' + score[i].marks + "<br>";
         }
-        document.getElementById("f").innerHTML = pval;
-        
+        document.getElementById('f').innerHTML = pval;
     }
-
 
 </script>
 
