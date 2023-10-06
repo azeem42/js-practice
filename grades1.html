@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    Name: <input type="text" id="name" placeholder="Enter Your Name">
+    Marks: <input type="text" id="mark" placeholder="Enter Your Marks">
+    <br><br>
+    <button onclick="myFunction()">Click Here</button>
+    <p id="f"></p>
+ 
+</body>
+
+<script>
+    const score = [{ firstName: "John", marks: 59 }, { firstName: "Alex", marks: 65 },
+    { firstName: "Ayra", marks: 75 }];
+
+    function myFunction() {
+        var name = document.getElementById('name').value;
+        var marks = document.getElementById('mark').value;
+        var score_obj = { firstName: name, marks: marks };
+        score.push(score_obj);
+        var pval = " ";
+        for (i = 0; i < score.length; i++) {
+            pval = pval + score[i].firstName + ' ' + score[i].marks + "<br>";
+        }
+        document.getElementById('f').innerHTML = pval;
+    }
+
+</script>
+
+</html>
