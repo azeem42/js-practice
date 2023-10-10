@@ -3,28 +3,71 @@
 
 <body>
     Name: <input type="text" id="name" placeholder="Enter Your Name">
-    Marks: <input type="text" id="mark" placeholder="Enter Your Marks">
+    Marks: <input type="number" id="mark" placeholder="Enter Your Marks">
     <br><br>
     <button onclick="myFunction()">Click Here</button>
+    &nbsp;<button onclick="grades()">Grades</button>
     <p id="f"></p>
- 
+    <table id="mytable">
+    </table>   
 </body>
 
 <script>
-    const score = [{ firstName: "John", marks: 59 }, { firstName: "Alex", marks: 65 },
+    const scores = [{ firstName: "John", marks: 59 }, { firstName: "Alex", marks: 65 },
     { firstName: "Ayra", marks: 75 }];
 
     function myFunction() {
         var name = document.getElementById('name').value;
         var marks = document.getElementById('mark').value;
-        var score_obj = { firstName: name, marks: marks };
-        score.push(score_obj);
-        var pval = " ";
-        for (i = 0; i < score.length; i++) {
-            pval = pval + score[i].firstName + ' ' + score[i].marks + "<br>";
+        var scores_obj = {firstName: name, marks: marks};
+        scores.push(scores_obj);
+        
+        table = document.getElementById('mytable');
+        tr = document.createElement('tr');
+
+        let th1 = document.createElement('th');
+        th1.textContent = "Name";
+        tr.appendChild(th1);
+
+        let th2 = document.createElement('th');
+        th2.textContent = "Number";
+        tr.appendChild(th2);
+
+        table.appendChild(tr);
+
+        for (let score of scores) {
+            let tr = document.createElement('tr');
+
+            let td1 = document.createElement('td');
+            td1.textContent = score.firstName;
+            tr.appendChild(td1);
+
+            td2 = document.createElement('td');
+            td2.textContent = score.marks;
+            tr.appendChild(td2);
+
+            table.appendChild(tr);
+            
         }
-        document.getElementById('f').innerHTML = pval;
     }
+        function grades(){
+            let th3 = document.createElement('th');
+            th3.textContent = "Grades";
+            tr.appendChild(th3);
+
+            for (let i = 0; i < scores.length; i++){
+
+                if(scores[i].marks < 60){
+                    
+                   let td3 = document.createElement('td');
+                   document.getElementById('td3').innerHTML = "Grade E";
+                   tr.appendChild(td3);
+                   table.appendChild(tr);
+                }
+            }
+
+
+        }
 
 </script>
 
