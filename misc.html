@@ -3,11 +3,10 @@
 
 <head>
     <style>
-        table,
-        th,
-        td {
+        table,th,td {
             border: 1px solid black;
             border-collapse: collapse;
+            text-align: center;
         }
     </style>
 </head>
@@ -24,18 +23,18 @@
 </body>
 
 <script>
-    const scores = [{ firstName: "John", marks: 59 }, { firstName: "Alex", marks: 65 },
-    { firstName: "Ayra", marks: 75 }];
+    const scores = [{ firstName: "John", marks: 59, id: 5 }, { firstName: "Alex", marks: 65, id: 10 },
+    { firstName: "Ayra", marks: 75, id: 15 }, { firstName: "Neil", marks: 85, id: 20 }];
 
     function myFunction() {
         var name = document.getElementById('name').value;
         var marks = document.getElementById('mark').value;
         var scores_obj = { firstName: name, marks: marks };
         scores.push(scores_obj);
-
+    
         table = document.getElementById('mytable');
         tr = document.createElement('tr');
-
+  
         let th1 = document.createElement('th');
         th1.textContent = "Name";
         tr.appendChild(th1);
@@ -45,10 +44,11 @@
         tr.appendChild(th2);
 
         table.appendChild(tr);
+        console.log(table);
 
         for (let score of scores) {
             tr1 = document.createElement('tr');
-
+ 
             let td1 = document.createElement('td');
             td1.textContent = score.firstName;
             tr1.appendChild(td1);
@@ -57,8 +57,12 @@
             td2.textContent = score.marks;
             tr1.appendChild(td2);
 
-            table.appendChild(tr1);
+            td3 = document.createElement('td');
+            td3.textContent = Math.floor(Math.random() * 101);
+            tr1.appendChild(td3);
 
+            table.appendChild(tr1);
+            
         }
     }
 
@@ -66,17 +70,13 @@
         let th3 = document.createElement('th');
         th3.textContent = "Grades";
         tr.appendChild(th3);
-
-        let td3 = document.createElement('td');
         
-
         for (let i = 0; i < scores.length; i++) {
 
             if (scores[i].marks < 60) {
                 
-                document.getElementsByName('td3').innerHTML = "Grade E";
-                tr1.appendChild(td3);
-                table.appendChild(tr1);
+                
+                
             }
         }
     }
