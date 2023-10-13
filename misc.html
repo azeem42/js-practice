@@ -36,40 +36,47 @@
         tr = document.createElement('tr');
   
         let th1 = document.createElement('th');
-        th1.textContent = "Name";
+        th1.textContent = "ID";
         tr.appendChild(th1);
 
         let th2 = document.createElement('th');
-        th2.textContent = "Number";
+        th2.textContent = "Name";
         tr.appendChild(th2);
+
+        let th3 = document.createElement('th');
+        th3.textContent = "Number";
+        tr.appendChild(th3);
 
         table.appendChild(tr);
         console.log(table);
 
+        var count = 1;
         for (let score of scores) {
             tr1 = document.createElement('tr');
  
             let td1 = document.createElement('td');
-            td1.textContent = score.firstName;
+            td1.textContent = count;
             tr1.appendChild(td1);
 
-            td2 = document.createElement('td');
-            td2.textContent = score.marks;
+            let td2 = document.createElement('td');
+            td2.textContent = score.firstName;
             tr1.appendChild(td2);
 
             td3 = document.createElement('td');
-            td3.textContent = Math.floor(Math.random() * 101);
+            td3.textContent = score.marks;
             tr1.appendChild(td3);
 
+            count++;
             table.appendChild(tr1);
+                
             
         }
     }
 
     function grades() {
-        let th3 = document.createElement('th');
-        th3.textContent = "Grades";
-        tr.appendChild(th3);
+        let th4 = document.createElement('th');
+        th4.textContent = "Grades";
+        tr.appendChild(th4);
         
         for (let i = 0; i < scores.length; i++) {
 
