@@ -16,7 +16,6 @@
     Marks: <input type="number" id="mark" placeholder="Enter Your Marks">
     <br><br>
     <button onclick="myFunction()">Click Here</button>
-    <!-- &nbsp;<button onclick="grades()">Grades</button> -->
     <p id="f"></p>
     <table id="mytable">
     </table>
@@ -29,7 +28,7 @@
     function myFunction() {
         var name = document.getElementById('name').value;
         var marks = document.getElementById('mark').value;
-        var id1 = "";
+        var id1 = Math.floor(Math.random() * 100) + 1;
         var scores_obj = { firstName: name, marks: marks, id: id1 };
         scores.push(scores_obj);
     
@@ -58,15 +57,13 @@
             tr1.appendChild(td2);
 
             let td3 = document.createElement('td');
-            td3.textContent = Math.floor(Math.random() * 100) + 1;
+            td3.textContent = score.id;
             tr1.appendChild(td3);
 
             table.appendChild(tr1);
                           
         }
-        // let td3 = document.createElement('td');
-        //     td3.textContent = Math.floor(Math.random() * 100) + 1;
-        //     tr1.appendChild(td3);
+       
     }
 
     console.log(scores);
