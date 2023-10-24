@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         table,th,td {
             border: 1px solid black;
@@ -25,15 +26,12 @@
     const scores = [{ firstName: "John", marks: 59, id: 5 }, { firstName: "Alex", marks: 65, id: 10 },
     { firstName: "Ayra", marks: 75, id: 15 }, { firstName: "Neil", marks: 85, id: 20 }];
 
-        
-       
-
         function myFunction() {
-            
+           
         var name = document.getElementById('name').value;
         var marks = document.getElementById('mark').value;
         var id1 = Math.floor(Math.random() * 100) + 1;
-        var scores_obj = { firstName: name, marks: marks, id: id1 };
+        var scores_obj = {firstName: name, marks: marks, id: id1};
         scores.push(scores_obj);
     
         table = document.getElementById('mytable');
@@ -67,12 +65,12 @@
             table.appendChild(tr1);
                           
         }
-       
+            // mytable.innerText = " ";
+            // mytable.appendChild(table);
     }
-
+    
     console.log(scores);
 
-   
 
 </script>
 
