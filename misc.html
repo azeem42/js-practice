@@ -16,8 +16,7 @@
     Name: <input type="text" id="name" placeholder="Enter Your Name">
     Marks: <input type="number" id="mark" placeholder="Enter Your Marks">
     <br><br>
-    <button onclick="myFunction()">Click Here</button>
-    <p id="demo"></p>
+    <button onclick="add()">Click Here</button>
     <table id="mytable">
     </table>
 </body>
@@ -26,11 +25,11 @@
     const scores = [{ firstName: "John", marks: 59, id: 5 }, { firstName: "Alex", marks: 65, id: 10 },
     { firstName: "Ayra", marks: 75, id: 15 }, { firstName: "Neil", marks: 85, id: 20 }];
 
-        function myFunction() {
+        function add() {
            
         var name = document.getElementById('name').value;
         var marks = document.getElementById('mark').value;
-        var id1 = Math.floor(Math.random() * 100) + 1;
+        var id1 = Math.random();
         var scores_obj = {firstName: name, marks: marks, id: id1};
         scores.push(scores_obj);
     
@@ -48,6 +47,8 @@
         table.appendChild(tr);
         
         for (let score of scores) {
+
+
             tr1 = document.createElement('tr');
  
             let td1 = document.createElement('td');
@@ -62,7 +63,11 @@
             td3.textContent = score.id;
             tr1.appendChild(td3);
 
+            tr1.setAttribute('id', score.id);
+
             table.appendChild(tr1);
+
+
                           
         }
             // mytable.innerText = " ";
