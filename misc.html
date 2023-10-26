@@ -9,6 +9,10 @@
             border-collapse: collapse;
             text-align: center;
         }
+        body {
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 
@@ -17,6 +21,7 @@
     Marks: <input type="number" id="mark" placeholder="Enter Your Marks">
     <br><br>
     <button onclick="add()">Click Here</button>
+    <p id="demo"></p>
     <table id="mytable">
     </table>
 </body>
@@ -29,10 +34,15 @@
            
         var name = document.getElementById('name').value;
         var marks = document.getElementById('mark').value;
-        var id1 = Math.random();
-        var scores_obj = {firstName: name, marks: marks, id: id1};
-        scores.push(scores_obj);
-    
+       
+
+        if( name === '' && marks === ''){
+            
+        }else{
+            var id1 = Math.random();
+            var scores_obj = {firstName: name, marks: marks, id: id1};
+            scores.push(scores_obj);
+        }
         table = document.getElementById('mytable');
         tr = document.createElement('tr');
   
@@ -47,7 +57,6 @@
         table.appendChild(tr);
         
         for (let score of scores) {
-
 
             tr1 = document.createElement('tr');
  
@@ -66,16 +75,13 @@
             tr1.setAttribute('id', score.id);
 
             table.appendChild(tr1);
-
-
-                          
+             
+            
         }
-            // mytable.innerText = " ";
-            // mytable.appendChild(table);
+     
     }
     
     console.log(scores);
-
 
 </script>
 

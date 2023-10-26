@@ -12,15 +12,17 @@
         body {
             text-align: center;
             margin-top: 20px;
-            font-size: large;
+            font-size: 20px;
         }
     </style>
 </head>
 
 <body>
     Name: <input type="text" id="name" placeholder="Enter Your Name">
-    Marks: <input type="number" id="mark" placeholder="Enter Your Marks">&nbsp;&nbsp;
-    <button onclick="add()">Add</button>
+    Marks: <input type="number" id="mark" placeholder="Enter Your Marks">
+    <br><br>
+    <button onclick="add()">Click Here</button>
+    <p id="demo"></p>
     <table id="mytable">
     </table>
 </body>
@@ -33,12 +35,16 @@
            
         var name = document.getElementById('name').value;
         var marks = document.getElementById('mark').value;
-        var id1 = Math.floor(Math.random() * 100) + 1;
+       
 
-        // validation
-        var scores_obj = {firstName: name, marks: marks, id: id1};
-        scores.push(scores_obj);
-    
+        if( name === '' &&  marks === ''){
+
+        }else{
+            var id1 = Math.random();
+            var scores_obj = {firstName: name, marks: marks, id: id1};
+            scores.push(scores_obj);
+        }
+        
         table = document.getElementById('mytable');
         tr = document.createElement('tr');
   
@@ -51,17 +57,33 @@
         tr.appendChild(th2);
 
         table.appendChild(tr);
+        
+        for (let score of scores) {
 
-        var pval = " ";
-        for (i = 0; i < scores.length; i++) {
-            pval = pval + scores[i].firstName + ' ' + scores[i].marks + ' ' + scores[i].id + "<br>";
+            tr1 = document.createElement('tr');
+ 
+            let td1 = document.createElement('td');
+            td1.textContent = score.firstName;
+            tr1.appendChild(td1);
+
+            let td2 = document.createElement('td');
+            td2.textContent = score.marks;
+            tr1.appendChild(td2);
+
+            let td3 = document.createElement('td');
+            td3.textContent = score.id;
+            tr1.appendChild(td3);
+
+            tr1.setAttribute('id', score.id);
+
+            table.appendChild(tr1);
+             
+            
         }
-        document.getElementById('mytable').innerHTML = pval;
-              
+    
     }
     
     console.log(scores);
-
 
 </script>
 
