@@ -39,10 +39,17 @@
         if( name === '' && marks === ''){
             
         }else{
+             if(name === '' || marks === ''){
+                alert("Name or Marks missing");
+             }
+            else if( name !== '' && marks !== '' ){
+
+            alert("Recrod updated");
             var id1 = Math.random();
             var scores_obj = {firstName: name, marks: marks, id: id1};
             scores.push(scores_obj);
         }
+    }
         table = document.getElementById('mytable');
         tr = document.createElement('tr');
   
@@ -72,10 +79,14 @@
             td3.textContent = score.id;
             tr1.appendChild(td3);
 
+            if(tr1.id == score.id){
+
+            }
+            else{
             tr1.setAttribute('id', score.id);
 
             table.appendChild(tr1);
-             
+        }
             
         }
      
