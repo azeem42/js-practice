@@ -44,7 +44,7 @@
              }
             else if( name !== '' && marks !== '' ){
 
-            alert("Recrod updated");
+            alert("Record updated");
             var id1 = Math.random();
             var scores_obj = {firstName: name, marks: marks, id: id1};
             scores.push(scores_obj);
@@ -60,6 +60,10 @@
         let th2 = document.createElement('th');
         th2.textContent = "Number";
         tr.appendChild(th2);
+
+        // let th3 = document.createElement('th');
+        // th3.textContent = "ID";
+        // tr.appendChild(th3);
 
         table.appendChild(tr);
         
@@ -77,20 +81,20 @@
 
             let td3 = document.createElement('td');
             td3.textContent = score.id;
-            tr1.appendChild(td3);
+            tr1.appendChild(td3);           
 
-            var table_rows = document.getElementById("mytable").rows;
-            console.log(table_rows);
-            if(table_rows.id == score.id){
-                console.log("Row exists");
-            }
-            else{
-                console.log("Row does not exist");
-            }
+            // var rowCount = $("#mytable tr").length;
+            // console.log(rowCount);
+
+            var element = document.getElementById('score.id');
+            console.log(element);
+                
+            
+            
+            
+
             tr1.setAttribute('id', score.id);
-
             table.appendChild(tr1);
-        
         }
     }
     
