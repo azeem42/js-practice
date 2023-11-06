@@ -83,23 +83,17 @@
             td3.textContent = score.id;
             tr1.appendChild(td3);           
 
-            // var rowCount = $("#mytable tr").length;
-            // console.log(rowCount);
-
-            var element = document.getElementById('score.id');
-            console.log(element);
+          
+            const ele = document.getElementById(score.id);
+            console.log("element --",ele);
                 
-            
-            
-            
 
             tr1.setAttribute('id', score.id);
             table.appendChild(tr1);
         }
     }
     
-    console.log(scores);
+    
 
 </script>
-
 </html>
