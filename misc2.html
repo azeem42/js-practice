@@ -20,7 +20,8 @@
     Name: <input type="text" id="name" placeholder="Enter Your Name">
     Marks: <input type="number" id="mark" placeholder="Enter Your Marks">
     <br><br>
-    <button onclick="add()">Click Here</button>
+    <button onclick="add()">Click Here</button>&nbsp;
+    <button onclick="grade()">Calculate Grade</button>
     <p id="demo"></p>
     <table id="mytable">
     </table>
@@ -35,7 +36,6 @@
         var name = document.getElementById('name').value;
         var marks = document.getElementById('mark').value;
        
-
         if( name === '' && marks === ''){
             
         }else{
@@ -52,7 +52,8 @@
     }
         table = document.getElementById('mytable');
         tr = document.createElement('tr');
-  
+        tr.setAttribute("id","headings");
+
         let th1 = document.createElement('th');
         th1.textContent = "Name";
         tr.appendChild(th1);
@@ -61,11 +62,12 @@
         th2.textContent = "Number";
         tr.appendChild(th2);
 
-        // let th3 = document.createElement('th');
-        // th3.textContent = "ID";
-        // tr.appendChild(th3);
-
-        table.appendChild(tr);
+        var hdRow = document.getElementById('headings');
+    
+        if(hdRow === null){
+            table.appendChild(tr);
+        }
+        // table.appendChild(tr);
         
         for (let score of scores) {
 
@@ -81,19 +83,36 @@
 
             let td3 = document.createElement('td');
             td3.textContent = score.id;
-            tr1.appendChild(td3);           
-
-          
+            // tr1.appendChild(td3);          
+        
             const ele = document.getElementById(score.id);
-            console.log("element --",ele);
-                
+            // console.log("element --",ele);
+       
+            if(ele === null){
+                tr1.setAttribute('id', score.id);
+                table.appendChild(tr1);
+            }
 
-            tr1.setAttribute('id', score.id);
-            table.appendChild(tr1);
         }
     }
     
-    
+    function grade() {
+        for (let i = 0; i < scores.length; i++) {
+            if (scores[i].marks < 60) {
+                document.getElementById("demo").innerHTML += scores[i].firstName + ' ' + scores[i].marks + ' ' + "E" + "<br>";
+            } else if (scores[i].marks < 70) {
+                document.getElementById("demo").innerHTML += scores[i].firstName + ' ' + scores[i].marks + ' ' + "D" + "<br>";
+            } else if (scores[i].marks < 80) {
+                document.getElementById("demo").innerHTML += scores[i].firstName + ' ' + scores[i].marks + ' ' + "C" + "<br>";
+            } else if (scores[i].marks < 90) {
+                document.getElementById("demo").innerHTML += scores[i].firstName + ' ' + scores[i].marks + ' ' + "B" + "<br>";
+            } else if (scores[i].marks < 100) {
+                document.getElementById("demo").innerHTML += scores[i].firstName + ' ' + scores[i].marks + ' ' + "A" + "<br>";
+            }
+        }
+    }
 
+
+    
 </script>
 </html>
