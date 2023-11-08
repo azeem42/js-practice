@@ -4,11 +4,14 @@
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        table,th,td {
+        table,
+        th,
+        td {
             border: 1px solid black;
             border-collapse: collapse;
             text-align: center;
         }
+
         body {
             text-align: center;
             margin-top: 20px;
@@ -21,7 +24,7 @@
     Marks: <input type="number" id="mark" placeholder="Enter Your Marks">
     <br><br>
     <button onclick="add()">Click Here</button>&nbsp;
-    <button onclick="grade()">Calculate Grade</button>
+    <button onclick="grade()">Grade</button>
     <p id="demo"></p>
     <table id="mytable">
     </table>
@@ -31,28 +34,28 @@
     const scores = [{ firstName: "John", marks: 59, id: 5 }, { firstName: "Alex", marks: 65, id: 10 },
     { firstName: "Ayra", marks: 75, id: 15 }, { firstName: "Neil", marks: 85, id: 20 }];
 
-        function add() {
-           
+    function add() {
+
         var name = document.getElementById('name').value;
         var marks = document.getElementById('mark').value;
-       
-        if( name === '' && marks === ''){
-            
-        }else{
-             if(name === '' || marks === ''){
-                alert("Name or Marks missing");
-             }
-            else if( name !== '' && marks !== '' ){
 
-            alert("Record updated");
-            var id1 = Math.random();
-            var scores_obj = {firstName: name, marks: marks, id: id1};
-            scores.push(scores_obj);
+        if (name === '' && marks === '') {
+
+        } else {
+            if (name === '' || marks === '') {
+                alert("Name or Marks missing");
+            }
+            else if (name !== '' && marks !== '') {
+
+                alert("Record updated");
+                var id1 = Math.random();
+                var scores_obj = { firstName: name, marks: marks, id: id1 };
+                scores.push(scores_obj);
+            }
         }
-    }
         table = document.getElementById('mytable');
         tr = document.createElement('tr');
-        tr.setAttribute("id","headings");
+        tr.setAttribute("id", "headings");      //id assigned to row
 
         let th1 = document.createElement('th');
         th1.textContent = "Name";
@@ -63,16 +66,16 @@
         tr.appendChild(th2);
 
         var hdRow = document.getElementById('headings');
-    
-        if(hdRow === null){
+
+        if (hdRow === null) {
             table.appendChild(tr);
         }
         // table.appendChild(tr);
-        
+
         for (let score of scores) {
 
             tr1 = document.createElement('tr');
- 
+
             let td1 = document.createElement('td');
             td1.textContent = score.firstName;
             tr1.appendChild(td1);
@@ -84,35 +87,36 @@
             let td3 = document.createElement('td');
             td3.textContent = score.id;
             // tr1.appendChild(td3);          
-        
+
             const ele = document.getElementById(score.id);
             // console.log("element --",ele);
-       
-            if(ele === null){
+
+            if (ele === null) {
                 tr1.setAttribute('id', score.id);
                 table.appendChild(tr1);
             }
 
         }
     }
-    
+    //Grade calculation function
     function grade() {
+        
         for (let i = 0; i < scores.length; i++) {
+            
             if (scores[i].marks < 60) {
-                document.getElementById("demo").innerHTML += scores[i].firstName + ' ' + scores[i].marks + ' ' + "E" + "<br>";
+                
             } else if (scores[i].marks < 70) {
-                document.getElementById("demo").innerHTML += scores[i].firstName + ' ' + scores[i].marks + ' ' + "D" + "<br>";
+                
             } else if (scores[i].marks < 80) {
-                document.getElementById("demo").innerHTML += scores[i].firstName + ' ' + scores[i].marks + ' ' + "C" + "<br>";
+                
             } else if (scores[i].marks < 90) {
-                document.getElementById("demo").innerHTML += scores[i].firstName + ' ' + scores[i].marks + ' ' + "B" + "<br>";
+                
             } else if (scores[i].marks < 100) {
-                document.getElementById("demo").innerHTML += scores[i].firstName + ' ' + scores[i].marks + ' ' + "A" + "<br>";
+                
             }
+            console.log();                     
         }
     }
 
-
-    
 </script>
 </html>
