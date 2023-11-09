@@ -102,19 +102,19 @@
     function grade() {
         
         for (let i = 0; i < scores.length; i++) {
-            
+            var grd = " ";
             if (scores[i].marks < 60) {
-                
+                grd = "Grade E";
             } else if (scores[i].marks < 70) {
-                
+                grd = "Grade D";
             } else if (scores[i].marks < 80) {
-                
+                grd = "Grade C";
             } else if (scores[i].marks < 90) {
-                
+                grd = "Grade B";
             } else if (scores[i].marks < 100) {
-                
-            }
-            console.log();                     
+                grd = "Grade A";
+            }              
+            console.log(scores[i].firstName + ' ' + scores[i].marks + ' ' + grd);                    
         }
     }
 
