@@ -138,9 +138,15 @@
             //(Grades)grd put to th and appended to row (ele1)
             let td4 = document.createElement('td');
             td4.textContent = grd;
-            td4.setAttribute("id", "grade_id");
-            const ele1 = document.getElementById('grade_id');
-            ele1.appendChild(td4);
+            td4.setAttribute("id", scores[i].id + "_grade_id");
+
+            let grade = document.getElementById(scores[i].id + "_grade_id");
+            let tr = document.getElementById(scores[i].id);
+
+            if(!grade){
+                tr.appendChild(td4);
+            }
+           
 
 
             // const tableRows = document.getElementsByTagName('tr');
@@ -148,8 +154,6 @@
             // const ele1 = document.getElementById('grade_id');
 
             // const ele1 = tr.getElementById('grade_id');
-
-            console.log(ele1);
 
             // if (ele1) {
             //     // ele1.appendChild(td4);  
