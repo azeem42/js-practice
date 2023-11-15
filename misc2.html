@@ -138,17 +138,29 @@
             //(Grades)grd put to th and appended to row (ele1)
             let td4 = document.createElement('td');
             td4.textContent = grd;
-            td4.setAttribute("id", "grade");
-            // ele1.appendChild(td4);
+            td4.setAttribute("id", "grade_id");
+            const ele1 = document.getElementById('grade_id');
+            ele1.appendChild(td4);
 
-            const ele1 = document.getElementById('grade');
 
-            if (ele1 === null) {
-                // tr1.setAttribute('id', score.id);
-                ele1.appendChild(td4);
-            }
+            // const tableRows = document.getElementsByTagName('tr');
+            
+            // const ele1 = document.getElementById('grade_id');
 
-                   
+            // const ele1 = tr.getElementById('grade_id');
+
+            console.log(ele1);
+
+            // if (ele1) {
+            //     // ele1.appendChild(td4);  
+            // }
+            
+                
+
+
+
+
+
         }           
     }
 
