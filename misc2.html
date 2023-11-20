@@ -99,24 +99,25 @@
 
         }
     }
-    //Grade calculation function
+
+    //Grade calculation function starts
     function grade() {
 
-            // let th4 = document.createElement('th');
-            // th4.textContent = "Grade";
-            // tr.appendChild(th4);
-            // console.log(th4);
-            
-            let th4 = document.createElement('th');
-            th4.setAttribute("id", "grade");
-            th4.textContent = "Grade";
+        // let th4 = document.createElement('th');
+        // th4.textContent = "Grade";
+        // tr.appendChild(th4);
+        // console.log(th4);
 
-            var hdRow1 = document.getElementById('grade');
+        let th4 = document.createElement('th');
+        th4.setAttribute("id", "grade");
+        th4.textContent = "Grade";
 
-            if (hdRow1 === null) {
-                tr.appendChild(th4);
-            }
-                    
+        var hdRow1 = document.getElementById('grade');
+
+        if (hdRow1 === null) {
+            tr.appendChild(th4);
+        }
+
         for (let i = 0; i < scores.length; i++) {
             var grd = " ";
             if (scores[i].marks < 60) {
@@ -129,44 +130,47 @@
                 grd = "Grade B";
             } else if (scores[i].marks < 100) {
                 grd = "Grade A";
-            }  
-            
+            }
+
             // console.log(scores[i].firstName + ' ' + scores[i].marks + ' ' + grd);
             // const ele1 = document.getElementById(scores[i].id); //Row caught by id
             // console.log(ele1);
-            
+
             //(Grades)grd put to th and appended to row (ele1)
             let td4 = document.createElement('td');
             td4.textContent = grd;
             td4.setAttribute("id", scores[i].id + "_grade_id");
-
             let grade = document.getElementById(scores[i].id + "_grade_id");
             let tr = document.getElementById(scores[i].id);
-
-            if(!grade){
+            // console.log(tr);
+            if (!grade) {
                 tr.appendChild(td4);
             }
-           
+        }
+    } // Grade Function ends here
+
+                //Delete Function starts
+
+                // document.getElementById("demo").onclick = function() {del()};
+                // function del() {
+                // document.getElementById("demo").innerHTML = "Deleted!";
+                // }
 
 
-            // const tableRows = document.getElementsByTagName('tr');
-            
-            // const ele1 = document.getElementById('grade_id');
+                // const box = document.getElementById('box');
+                // box.addEventListener('click', () => {
+                // box.remove();
+                // });
 
-            // const ele1 = tr.getElementById('grade_id');
+                function del(){
 
-            // if (ele1) {
-            //     // ele1.appendChild(td4);  
-            // }
-            
-                
-
-
-
-
-
-        }           
-    }
-
+                    for(let j = 0; j < scores.length; j++){
+                        var del = " ";
+                        scores[j].id = del;
+                        console.log(scores[j].id);
+                    
+                    }
+            }
 </script>
+
 </html>
