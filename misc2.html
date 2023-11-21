@@ -162,15 +162,19 @@
                 // box.remove();
                 // });
 
-                function del(){
+                
 
-                    for(let j = 0; j < scores.length; j++){
-                        var del = " ";
-                        scores[j].id = del;
-                        console.log(scores[j].id);
-                    
-                    }
-            }
+                const tableRows = document.getElementsByTagName('tr');
+                // starting from 1 instead of 0
+                // because we don’t want to delete the header
+                for (let curr = 1; curr < tableRows.length; curr++) {
+                tableRows[curr].addEventListener('click', function(del){
+                tableRows[curr].remove();
+                 });
+                }
+                
+
+            // }
 </script>
 
 </html>
